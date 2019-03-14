@@ -39,7 +39,7 @@ func resizePercent(writer http.ResponseWriter, request *http.Request) {
 
 	savedFileWithoutExt,savedFileWithExt,fileExtension := saveFile(fh, file, imagesPath)
 
-	res,_ := httpclient.Post("http://localhost:8082/exifdata/filtered", map[string]string {
+	res,_ := httpclient.Post("http://exifdata:8082/exifdata/filtered", map[string]string {
 		"@file": savedFileWithExt,
 		"filter": "Image Height",
 	})

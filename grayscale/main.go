@@ -36,7 +36,7 @@ func grayscaleResize(writer http.ResponseWriter, request *http.Request) {
 	grayscale := execGrayscale(savedFileWithoutExt, savedFileWithExt)
 	defer file.Close()
 
-	res,error := httpclient.Post("http://localhost:8083/resize", map[string]string {
+	res,error := httpclient.Post("http://resize:8083/resize", map[string]string {
 		"@file": grayscale,
 		"size": size,
 	})

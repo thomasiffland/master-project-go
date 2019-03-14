@@ -36,7 +36,7 @@ func rawtojpgGrayscale(writer http.ResponseWriter, request *http.Request) {
 	jpg := execRawToJpg(savedFileWithoutExt, savedFileWithExt)
 	defer file.Close()
 
-	res,_ := httpclient.Post("http://localhost:8081/grayscale", map[string]string {
+	res,_ := httpclient.Post("http://grayscale:8081/grayscale", map[string]string {
 		"@file": jpg,
 	})
 	bytes, _ := res.ReadAll()
